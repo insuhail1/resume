@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mohd Suhail - Senior Software Engineer</title>
+
+    <style>
+      @page {
+        size: A4;
+        margin: 20mm 10mm;
+        page-break-inside: avoid;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 210mm;
+        min-height: 297mm;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        color: #1f2937;
+        background: #ffffff;
+        line-height: 1.35;
+        font-size: 10.5px;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      body {
+        padding: 0;
+      }
+
+      .page {
+        width: 100%;
+        min-height: 100%;
+      }
+
+      .header {
+        border-bottom: 2px solid #111827;
+        padding-bottom: 10px;
+        margin-bottom: 12px;
+      }
+
+      .name {
+        font-size: 28px;
+        font-weight: 800;
+        letter-spacing: -1px;
+        color: #111827;
+      }
+
+      .role {
+        font-size: 12px;
+        color: #4b5563;
+        font-weight: 600;
+        margin-top: 2px;
+      }
+
+      .contact {
+        margin-top: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        font-size: 10px;
+        color: #374151;
+      }
+
+      .contact span {
+        white-space: nowrap;
+      }
+
+      .section {
+        margin-bottom: 12px;
+        page-break-inside: avoid;
+      }
+
+      .section-title {
+        font-size: 12px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #111827;
+        border-bottom: 1px solid #d1d5db;
+        padding-bottom: 3px;
+        margin-bottom: 6px;
+      }
+
+      .summary {
+        text-align: justify;
+        color: #374151;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 18px;
+      }
+
+      .skill-group {
+        break-inside: avoid;
+      }
+
+      .skill-title {
+        font-weight: 700;
+        color: #111827;
+        margin-bottom: 2px;
+      }
+
+      .skill-items {
+        color: #4b5563;
+      }
+
+      .job {
+        margin-bottom: 10px;
+        page-break-inside: avoid;
+      }
+
+      .job-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 2px;
+      }
+
+      .company {
+        font-size: 12px;
+        font-weight: 700;
+        color: #111827;
+      }
+
+      .position {
+        color: #4b5563;
+        font-weight: 600;
+      }
+
+      .duration {
+        font-size: 10px;
+        color: #6b7280;
+        text-align: right;
+        white-space: nowrap;
+      }
+
+      .tech-stack {
+        margin-top: 3px;
+        font-size: 9px;
+        color: #6b7280;
+        font-style: italic;
+      }
+
+      ul {
+        margin-left: 16px;
+        margin-top: 4px;
+      }
+
+      li {
+        margin-bottom: 3px;
+        color: #374151;
+      }
+
+      .education-row {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .degree {
+        font-weight: 700;
+      }
+
+      .university {
+        color: #4b5563;
+      }
+
+      .achievements {
+        columns: 2;
+        column-gap: 20px;
+      }
+
+      .achievements li {
+        break-inside: avoid;
+      }
+
+      strong {
+        color: #111827;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      @media print {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+
+        .page {
+          page-break-after: avoid;
+        }
+
+        .section,
+        .job,
+        .skill-group {
+          page-break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <header class="header">
+        <h1 class="name">Mohd Suhail</h1>
+
+        <div class="role">
+          Senior Software Engineer | Frontend Heavy | Full Stack Engineer
+        </div>
+
+        <div class="contact">
+          <span>📞 +91 70177 91874</span>
+          <span>✉ eithansuhail@gmail.com</span>
+          <span>GitHub: github.com/insuhail1</span>
+          <span>LinkedIn: linkedin.com/in/insuhail1</span>
+        </div>
+      </header>
+
+      <section class="section">
+        <div class="section-title">Professional Summary</div>
+
+        <p class="summary">
+          Senior Software Engineer with 7 years of experience building scalable,
+          high-performance web applications using React, Next.js, TypeScript,
+          and Node.js. Proven expertise in frontend architecture, performance
+          engineering, SSR/SSG, design systems, and developer experience.
+          Experienced in leading cross-functional initiatives, mentoring
+          engineers, owning production systems, and delivering measurable
+          business outcomes, including a strategic e-signature migration that
+          reduced annual operational costs by <strong>$140K</strong>.
+        </p>
+      </section>
+
+      <section class="section">
+        <div class="section-title">Core Skills</div>
+
+        <div class="skills-grid">
+          <div class="skill-group">
+            <div class="skill-title">Frontend</div>
+            <div class="skill-items">
+              React, Next.js, TypeScript, JavaScript (ES6+), Redux Toolkit,
+              Tailwind CSS, Storybook, HTML5, CSS3, Responsive Design
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-title">Backend</div>
+            <div class="skill-items">
+              Node.js, Express.js, REST APIs, GraphQL, Server-Side Rendering
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-title">Testing</div>
+            <div class="skill-items">
+              Jest, Cypress, React Testing Library, Unit & Integration Testing
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-title">DevOps & Infrastructure</div>
+            <div class="skill-items">
+              Docker, Buildkite, CI/CD, GitHub Actions, Deployment Automation
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-title">Monitoring</div>
+            <div class="skill-items">
+              FullStory, Observe, A/B Testing, Incident Management
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-title">Architecture</div>
+            <div class="skill-items">
+              SSG, SSR, Design Systems, Performance Optimization, Micro
+              Frontends, Component Libraries
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">Professional Experience</div>
+
+        <article class="job">
+          <div class="job-header">
+            <div>
+              <div class="company">Better</div>
+              <div class="position">Software Engineer</div>
+            </div>
+
+            <div class="duration">
+              Nov 2022 – Present<br />
+              Gurgaon, India
+            </div>
+          </div>
+
+          <ul>
+            <li>
+              Led migration from HelloSign/Dropbox Sign to Anvil, generating
+              <strong>$140K in annual cost savings</strong>
+              through reduced licensing and operational expenses.
+            </li>
+
+            <li>
+              Architected migration from React to Next.js SSG with a headless
+              CMS, improving page load performance by
+              <strong>40%</strong> and strengthening SEO.
+            </li>
+
+            <li>
+              Owned REST APIs, production incident response, and
+              cross-functional delivery across Product, Sales, and Marketing
+              teams.
+            </li>
+
+            <li>
+              Built Buildkite automation pipelines integrated with Builder.io
+              publishing workflows.
+            </li>
+
+            <li>
+              Implemented monitoring, alerting, and experimentation frameworks
+              using FullStory, Observe, and A/B testing.
+            </li>
+
+            <li>
+              Improved release quality through comprehensive automated testing
+              with Jest, Cypress, and React Testing Library.
+            </li>
+          </ul>
+
+          <div class="tech-stack">
+            React · Next.js · TypeScript · Node.js · Tailwind CSS · Builder.io ·
+            Jest · Cypress · Buildkite
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="job-header">
+            <div>
+              <div class="company">Koinearth</div>
+              <div class="position">Software Engineer</div>
+            </div>
+
+            <div class="duration">
+              Sep 2020 – Oct 2022<br />
+              Bangalore, India
+            </div>
+          </div>
+
+          <ul>
+            <li>
+              Led frontend initiatives for blockchain-powered B2B platforms and
+              NFT marketplace products using React, Next.js, Redux, and GraphQL.
+            </li>
+
+            <li>
+              Spearheaded a global search platform across NFTs, creators, and
+              digital assets, improving discoverability and user engagement.
+            </li>
+
+            <li>
+              Built highly optimized virtualized tables supporting sorting,
+              filtering, and large-scale datasets.
+            </li>
+
+            <li>
+              Mentored junior engineers through code reviews, architectural
+              guidance, and technical coaching.
+            </li>
+
+            <li>
+              Enforced Airbnb JavaScript standards, improving consistency,
+              maintainability, and long-term code quality.
+            </li>
+
+            <li>
+              Automated invoice, shipment, and order workflows using Puppeteer
+              and lit-html generated templates.
+            </li>
+          </ul>
+
+          <div class="tech-stack">
+            React · Next.js · Redux · GraphQL · TypeScript · Node.js · Puppeteer
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="job-header">
+            <div>
+              <div class="company">Zapplabs</div>
+              <div class="position">MERN Stack Developer</div>
+            </div>
+
+            <div class="duration">
+              Nov 2019 – Sep 2020<br />
+              Bangalore, India
+            </div>
+          </div>
+
+          <ul>
+            <li>
+              Developed full-stack web applications using React, Node.js,
+              Express.js, MongoDB, and MySQL.
+            </li>
+
+            <li>
+              Built reusable Material UI components with strong accessibility
+              and cross-browser compatibility.
+            </li>
+
+            <li>
+              Collaborated directly with clients to translate business
+              requirements into scalable technical solutions.
+            </li>
+
+            <li>
+              Conducted internal knowledge-sharing sessions that strengthened
+              engineering practices and team growth.
+            </li>
+          </ul>
+
+          <div class="tech-stack">
+            React · Node.js · Express.js · MongoDB · MySQL · Material UI
+          </div>
+        </article>
+      </section>
+
+      <section class="section">
+        <div class="section-title">Education</div>
+
+        <div class="education-row">
+          <div>
+            <div class="degree">Master of Computer Applications (MCA)</div>
+
+            <div class="university">Aligarh Muslim University (AMU)</div>
+          </div>
+
+          <div class="duration">
+            2017 – 2020<br />
+            CGPA: 8.2 / 10
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">Selected Achievements</div>
+
+        <ul class="achievements">
+          <li>
+            Delivered an enterprise e-signature migration that reduced annual
+            operating expenses by <strong>$140K</strong>.
+          </li>
+
+          <li>
+            Improved application performance by <strong>40%</strong>
+            through large-scale Next.js SSG adoption.
+          </li>
+
+          <li>
+            Led frontend engineering efforts across fintech, blockchain, and NFT
+            products serving global users.
+          </li>
+
+          <li>
+            Established engineering standards and mentorship practices that
+            improved team productivity and code quality.
+          </li>
+
+          <li>
+            Built deployment automation pipelines that accelerated developer
+            workflows and content publishing.
+          </li>
+
+          <li>
+            Designed reusable component systems and scalable frontend
+            architectures for long-term maintainability.
+          </li>
+        </ul>
+      </section>
+    </div>
+  </body>
+</html>
