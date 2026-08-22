@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mohd Suhail - Senior Software Engineer</title>
+    <title>Mohd Suhail - Frontend Engineer</title>
 
     <style>
       @page {
@@ -19,7 +19,6 @@
       body {
         min-height: 100%;
         margin: 0;
-        padding: 24px 0;
         display: flex;
         justify-content: center;
         font-family:
@@ -33,17 +32,16 @@
         print-color-adjust: exact;
       }
 
-      body {
-        position: relative;
-      }
-
       .page {
         width: min(100%, 8.5in);
         min-height: 11in;
-        padding: 0.5in 0.2in;
+        padding: 0.15in 0;
         margin: 0 auto;
         background: #ffffff;
       }
+
+      /* NOTE: single-column layout throughout (no CSS grid/multi-column)
+         so ATS parsers read content top-to-bottom in the correct order. */
 
       .header {
         border-bottom: 2px solid #111827;
@@ -52,83 +50,77 @@
       }
 
       .name {
-        font-size: 28px;
+        font-size: 26px;
         font-weight: 800;
-        letter-spacing: -1px;
+        letter-spacing: -0.5px;
         color: #111827;
+        margin: 0;
       }
 
       .role {
         font-size: 12px;
         color: #4b5563;
-        font-weight: 600;
-        margin-top: 2px;
+        font-weight: 700;
+        margin-top: 4px;
       }
 
       .contact {
         margin-top: 8px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
         font-size: 10px;
         color: #374151;
       }
 
-      .contact span {
-        white-space: nowrap;
+      .contact a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .contact .sep {
+        color: #9ca3af;
+        margin: 0 6px;
       }
 
       .section {
         margin-bottom: 12px;
-        page-break-inside: avoid;
       }
 
       .section-title {
-        font-size: 12px;
+        font-size: 11.5px;
         font-weight: 800;
         text-transform: uppercase;
         letter-spacing: 1px;
         color: #111827;
         border-bottom: 1px solid #d1d5db;
         padding-bottom: 3px;
-        margin-bottom: 6px;
+        margin: 0 0 7px 0;
       }
 
       .summary {
         text-align: justify;
         color: #374151;
+        margin: 0;
       }
 
-      .skills-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px 18px;
-      }
-
-      .skill-group {
-        break-inside: avoid;
-      }
-
-      .skill-title {
-        font-weight: 700;
-        color: #111827;
-        margin-bottom: 2px;
-      }
-
-      .skill-items {
+      /* Skills: single vertical list of labeled rows (no grid columns) */
+      .skill-row {
+        margin-bottom: 5px;
         color: #4b5563;
       }
 
+      .skill-row .skill-title {
+        font-weight: 700;
+        color: #111827;
+      }
+
       .job {
-        margin-bottom: 10px;
-        page-break-inside: avoid;
+        margin-bottom: 11px;
       }
 
       .job-header {
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 2px;
+        align-items: baseline;
+        margin-bottom: 1px;
       }
 
       .company {
@@ -139,62 +131,61 @@
 
       .position {
         color: #4b5563;
-        font-weight: 600;
+        font-weight: 700;
+        font-size: 10.5px;
       }
 
-      .duration {
+      .duration,
+      .location {
         font-size: 10px;
         color: #6b7280;
         text-align: right;
         white-space: nowrap;
       }
 
+      .job-sub {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 4px;
+      }
+
       .tech-stack {
-        margin-top: 3px;
+        margin-top: 4px;
         font-size: 9px;
         color: #6b7280;
         font-style: italic;
       }
 
       ul {
-        margin-left: 16px;
-        margin-top: 4px;
+        margin: 0 0 0 16px;
+        padding: 0;
       }
 
       li {
-        margin-bottom: 3px;
+        margin-bottom: 4px;
         color: #374151;
       }
 
       .education-row {
         display: flex;
         justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 2px;
       }
 
       .degree {
         font-weight: 700;
+        color: #111827;
       }
 
       .university {
         color: #4b5563;
-      }
-
-      .achievements {
-        columns: 2;
-        column-gap: 20px;
-      }
-
-      .achievements li {
-        break-inside: avoid;
+        margin-top: 1px;
       }
 
       strong {
         color: #111827;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
       }
 
       @media print {
@@ -212,8 +203,7 @@
         }
 
         .section,
-        .job,
-        .skill-group {
+        .job {
           page-break-inside: avoid;
         }
       }
@@ -226,279 +216,247 @@
         <h1 class="name">Mohd Suhail</h1>
 
         <div class="role">
-          Senior Frontend Engineer | React.js · Next.js · TypeScript |
-          Full-Stack JavaScript
+          Frontend Engineer | React &middot; Next.js (App Router / RSC) &middot;
+          TypeScript | Full-Stack JavaScript
         </div>
 
         <div class="contact">
-          <span>Phone: <a href="tel:+917017791874">+91 70177 91874</a></span>
+          <span>Phone: <a href="tel:7017791874">7017791874</a></span>
+          <span class="sep">|</span>
           <span
             >Email:
             <a href="mailto:eithansuhail@gmail.com"
               >eithansuhail@gmail.com</a
             ></span
           >
-          <span
-            >GitHub:
-            <a href="https://github.com/insuhail1"
-              >github.com/insuhail1</a
+          <span class="sep">|</span>
+          <span>
+            <a href="https://github.com/insuhail1">GitHub: insuhail1</a></span
+          >
+          <span class="sep">|</span>
+          <span>
+            <a href="https://linkedin.com/in/insuhail1"
+              >LinkedIn: insuhail1</a
             ></span
           >
-          <span
-            >LinkedIn:
-            <a href="https://linkedin.com/in/insuhail1"
-              >linkedin.com/in/insuhail1</a
-            ></span
+          <span class="sep">|</span>
+          <span>
+            <a href="https://insuhail1.github.io/portfolio/">Portfolio</a></span
           >
         </div>
       </header>
 
       <section class="section">
-        <div class="section-title">Professional Summary</div>
+        <h2 class="section-title">Professional Summary</h2>
 
         <p class="summary">
-          Senior Frontend Engineer with 7 years of experience building scalable,
-          high-performance web applications using React.js, Next.js, TypeScript,
-          JavaScript, and Node.js. Strong expertise in frontend architecture,
-          server-side rendering, static site generation, performance
-          optimization, design systems, AI-assisted development, and developer
-          experience. Trusted to own production systems, lead cross-functional
-          initiatives, mentor engineers, and deliver measurable business
-          outcomes, including a strategic e-signature migration that reduced
-          annual operational costs by <strong>$140K</strong>.
+          Senior Frontend Engineer with 7 years of experience building scalable
+          web applications with React, Next.js, TypeScript, and Node.js. Led
+          high-impact engineering initiatives that delivered 40% faster page
+          loads through a React-to-Next.js migration and
+          <strong>$140K in annual savings</strong>
+          through an e-signature platform migration. Strong ownership of
+          frontend architecture, production systems, and end-to-end delivery of
+          business-critical products.
         </p>
       </section>
 
       <section class="section">
-        <div class="section-title">Core Skills</div>
+        <h2 class="section-title">Core Skills</h2>
 
-        <div class="skills-grid">
-          <div class="skill-group">
-            <div class="skill-title">Frontend Engineering</div>
-            <div class="skill-items">
-              React.js, Next.js, TypeScript, JavaScript (ES6+), Redux Toolkit,
-              Tailwind CSS, Storybook, HTML5, CSS3, Accessibility, Responsive
-              Design
-            </div>
-          </div>
+        <div class="skill-row">
+          <span class="skill-title">Frontend Engineering: </span>
+          React, React.js, Next.js (App Router, React Server Components),
+          TypeScript, JavaScript (ES6+), Ember.js, State Management (Redux
+          Toolkit), Component Systems, Tailwind CSS, Storybook, HTML5, CSS3,
+          Responsive Design, Accessibility (WCAG 2.1 AA), Progressive Web
+          Applications (PWA)
+        </div>
 
-          <div class="skill-group">
-            <div class="skill-title">Full-Stack Development</div>
-            <div class="skill-items">
-              Node.js, Express.js, REST APIs, GraphQL, Server-Side Rendering,
-              API Integration
-            </div>
-          </div>
+        <div class="skill-row">
+          <span class="skill-title">Full-Stack Development: </span>
+          Node.js, Express.js, REST APIs, GraphQL, WebSockets (Pusher.js),
+          Real-Time Data, Server-Side Rendering, API Integration
+        </div>
 
-          <div class="skill-group">
-            <div class="skill-title">Observability &amp; Experimentation</div>
-            <div class="skill-items">
-              FullStory, Observe, A/B Testing, Monitoring, Alerting, Incident
-              Management
-            </div>
-          </div>
+        <div class="skill-row">
+          <span class="skill-title">Architecture &amp; Performance: </span>
+          Static Site Generation (SSG), Server-Side Rendering (SSR), Frontend
+          Architecture Decisions, Core Web Vitals, Lighthouse, Bundle Size
+          Optimization, Tree Shaking, Code Splitting, es-toolkit, Design
+          Systems, Micro Frontends, Headless CMS
+        </div>
 
-          <div class="skill-group">
-            <div class="skill-title">Architecture &amp; Performance</div>
-            <div class="skill-items">
-              Static Site Generation (SSG), Server-Side Rendering (SSR), Design
-              Systems, Performance Optimization, Micro Frontends, Component
-              Libraries, Headless CMS
-            </div>
-          </div>
+        <div class="skill-row">
+          <span class="skill-title">Testing &amp; Quality: </span>
+          Jest, Vitest, Cypress, Playwright, React Testing Library,
+          Cross-Browser Debugging, Unit &amp; Integration Testing, Code Review
+        </div>
 
-          <div class="skill-group">
-            <div class="skill-title">AI Development</div>
-            <div class="skill-items">
-              Claude MCP, Model Context Protocol (MCP), AI-Assisted Development,
-              Codebase Exploration, Developer Productivity Tooling
-            </div>
-          </div>
+        <div class="skill-row">
+          <span class="skill-title">Observability &amp; Experimentation: </span>
+          FullStory, Observe, A/B Testing, Monitoring, Alerting, Incident
+          Management
+        </div>
 
-          <div class="skill-group">
-            <div class="skill-title">Testing &amp; Quality</div>
-            <div class="skill-items">
-              Jest, Cypress, React Testing Library, Unit Testing, Integration
-              Testing, Code Review, Release Quality
-            </div>
-          </div>
+        <div class="skill-row">
+          <span class="skill-title">AI Development: </span>
+          Claude MCP (Model Context Protocol), AI-Assisted Development, Codebase
+          Exploration, Developer Productivity Tooling
+        </div>
+
+        <div class="skill-row">
+          <span class="skill-title">DevOps &amp; Tooling: </span>
+          Webpack, Vite, Babel, Git, GitHub Actions, CI/CD, Agile/Scrum
         </div>
       </section>
 
       <section class="section">
-        <div class="section-title">Professional Experience</div>
+        <h2 class="section-title">Professional Experience</h2>
 
         <article class="job">
           <div class="job-header">
-            <div>
-              <div class="company">Better</div>
-              <div class="position">
-                Software Engineer, Frontend / Full Stack
-              </div>
-            </div>
-
-            <div class="duration">
-              Nov 2022 – Present<br />
-              Gurgaon, India
-            </div>
+            <div class="company">Better</div>
+            <div class="duration">Nov 2022 &ndash; Present</div>
+          </div>
+          <div class="job-sub">
+            <div class="position">Software Engineer, Frontend / Full Stack</div>
+            <div class="location">Gurgaon, India</div>
           </div>
 
           <ul>
             <li>
               Led enterprise e-signature migration from HelloSign/Dropbox Sign
-              to Anvil, generating <strong>$140K in annual cost savings</strong>
-              through reduced licensing and operational expenses.
+              to Anvil, generating
+              <strong>$140K in annual cost savings</strong> through reduced
+              licensing and operational expenses.
             </li>
 
             <li>
-              Architected React to Next.js static site generation migration with
-              a headless CMS, improving page load performance by
-              <strong>40%</strong> and strengthening SEO for marketing pages.
+              Integrated real-time updates using the Pusher.js WebSocket library
+              for live loan-task status changes, eliminating polling-based API
+              calls and reducing perceived latency on high-traffic pages.
             </li>
 
             <li>
-              Owned frontend and full-stack delivery across Product, Sales, and
-              Marketing teams, including REST APIs, production support, and
-              incident response.
+              Reduced production JavaScript bundle size by
+              <strong>~65% (850KB &rarr; 300KB)</strong> through tree-shaking
+              optimization, route-based code splitting, and migrating from
+              Lodash to the tree-shakeable es-toolkit/compat library.
             </li>
 
             <li>
-              Applied Claude MCP and AI-assisted development workflows for
-              faster codebase exploration, implementation planning, and
-              developer productivity.
+              Owned migration of a legacy Ember.js-based document service to a
+              TypeScript-based service, improving developer efficiency and
+              maintainability; used Claude MCP to auto-generate Observe monitors
+              and strategically deprecated
+              <strong>~400 templates over 6&ndash;8 months</strong>.
             </li>
 
             <li>
-              Implemented monitoring, alerting, and experimentation frameworks
-              using FullStory, Observe, and A/B testing.
-            </li>
-
-            <li>
-              Improved release quality through automated unit, integration, and
-              end-to-end testing with Jest, Cypress, and React Testing Library.
+              Architected migration from React to Next.js App Router with static
+              site generation (SSG) and a headless CMS, driving
+              <strong>frontend architecture decisions</strong> through design
+              reviews and code review with the team; improved Core Web Vitals
+              and page load performance by <strong>40%</strong>
+              and strengthened SEO for marketing pages.
             </li>
           </ul>
 
           <div class="tech-stack">
-            React.js · Next.js · TypeScript · Node.js · Tailwind CSS ·
-            Builder.io · Jest · Cypress · Claude MCP
+            React &middot; Next.js (App Router) &middot; TypeScript &middot;
+            Ember.js &middot; Node.js &middot; Pusher.js &middot; Tailwind CSS
+            &middot; Builder.io &middot; es-toolkit &middot; Jest &middot;
+            Cypress &middot; Git &middot; Claude MCP
           </div>
         </article>
 
         <article class="job">
           <div class="job-header">
-            <div>
-              <div class="company">Koinearth</div>
-              <div class="position">Software Engineer</div>
-            </div>
-
-            <div class="duration">
-              Sep 2020 – Oct 2022<br />
-              Bangalore, India
-            </div>
+            <div class="company">Koinearth</div>
+            <div class="duration">Sep 2020 &ndash; Oct 2022</div>
+          </div>
+          <div class="job-sub">
+            <div class="position">Software Engineer</div>
+            <div class="location">Bangalore, India</div>
           </div>
 
           <ul>
             <li>
               Led frontend engineering for blockchain-powered B2B platforms and
-              NFT marketplace products using React.js, Next.js, Redux,
-              TypeScript, and GraphQL.
+              an NFT marketplace using React, Next.js, Redux, TypeScript, and
+              GraphQL.
             </li>
 
             <li>
-              Spearheaded global search across NFTs, creators, and digital
-              assets, improving product discoverability and user engagement.
+              Built global search across NFTs, creators, and digital assets,
+              improving product discoverability and user engagement.
             </li>
 
             <li>
-              Built optimized virtualized data tables supporting sorting,
-              filtering, and large-scale datasets for data-heavy workflows.
+              Built performance-optimized, virtualized data tables supporting
+              sorting, filtering, and large-scale datasets for data-heavy
+              workflows.
             </li>
 
             <li>
               Automated invoice, shipment, and order workflows using Puppeteer
-              and lit-html templates, reducing manual operational effort.
+              and lit-html templates, reducing manual operational effort for the
+              operations team.
             </li>
           </ul>
 
           <div class="tech-stack">
-            React.js · Next.js · Redux · GraphQL · TypeScript · Node.js ·
-            Puppeteer
+            React &middot; Next.js &middot; Redux &middot; GraphQL &middot;
+            TypeScript &middot; Node.js &middot; Puppeteer &middot; Git
           </div>
         </article>
 
         <article class="job">
           <div class="job-header">
-            <div>
-              <div class="company">Zapplabs</div>
-              <div class="position">Full Stack Developer</div>
-            </div>
-
-            <div class="duration">
-              Nov 2019 – Sep 2020<br />
-              Bangalore, India
-            </div>
+            <div class="company">Zapplabs</div>
+            <div class="duration">Nov 2019 &ndash; Sep 2020</div>
+          </div>
+          <div class="job-sub">
+            <div class="position">Full Stack Developer</div>
+            <div class="location">Bangalore, India</div>
           </div>
 
           <ul>
             <li>
-              Developed full-stack web applications using React.js, Node.js,
+              Developed full-stack web applications using React, Node.js,
               Express.js, and REST APIs.
             </li>
 
             <li>
               Built reusable Material UI component systems with accessibility,
-              responsive design, and cross-browser compatibility.
+              responsive design, and cross-browser compatibility in mind.
             </li>
           </ul>
 
           <div class="tech-stack">
-            React.js · Node.js · Express.js · Material UI
+            React &middot; Node.js &middot; Express.js &middot; Material UI
+            &middot; Git
           </div>
         </article>
       </section>
 
       <section class="section">
-        <div class="section-title">Education</div>
+        <h2 class="section-title">Education</h2>
 
         <div class="education-row">
-          <div>
-            <div class="degree">Master of Computer Applications (MCA)</div>
-
-            <div class="university">Aligarh Muslim University (AMU)</div>
-          </div>
-
-          <div class="duration">
-            2017 – 2020<br />
-            CGPA: 8.2 / 10
-          </div>
+          <div class="degree">Master of Computer Applications (MCA)</div>
+          <div class="duration">2017 &ndash; 2020</div>
         </div>
-      </section>
+        <div class="university">
+          Aligarh Muslim University (AMU) &mdash; CGPA: 8.2 / 10
+        </div>
 
-      <section class="section">
-        <div class="section-title">Key Achievements</div>
-
-        <ul class="achievements">
-          <li>
-            Delivered an enterprise e-signature migration that reduced annual
-            operating expenses by <strong>$140K</strong>.
-          </li>
-
-          <li>
-            Improved application performance by <strong>40%</strong>
-            through large-scale Next.js SSG adoption.
-          </li>
-
-          <li>
-            Led frontend engineering across fintech, blockchain, NFT, and B2B
-            SaaS products serving global users.
-          </li>
-
-          <li>
-            Designed reusable component systems, design systems, and scalable
-            frontend architectures for long-term maintainability.
-          </li>
-        </ul>
+        <div class="education-row">
+          <div class="degree">BSc in Computer Science</div>
+          <div class="duration">2014 &ndash; 2017</div>
+        </div>
+        <div class="university">Dr Bhimrao Ambedkar University, Agra</div>
       </section>
     </div>
   </body>
